@@ -11,9 +11,10 @@
         android:id="@+id/toolbar_exercise_activity"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="#ffffff"
+        android:background="@drawable/radius_tool_bar"
         android:theme="@style/ToolbarTheme"
-        app:titleTextColor="@color/teal_700"
+        app:titleTextColor="@color/white"
+        android:textAlignment="center"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
