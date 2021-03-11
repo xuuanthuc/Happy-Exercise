@@ -24,7 +24,7 @@
         android:gravity="center"
         android:orientation="vertical"
         android:visibility="visible"
-        tools:visibility="gone">
+        tools:visibility="visible">
 
         <TextView
             android:layout_width="wrap_content"
@@ -70,6 +70,22 @@
                     tools:text="10" />
             </LinearLayout>
         </FrameLayout>
+        <TextView
+            android:paddingTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UPCOMING EXERCISEE:"
+            android:textColor="#A6A6A6"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvNextExercise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next Exercise"
+            android:textColor="#515151"
+            android:textSize="22sp"
+            android:textStyle="bold" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/llExerciseview"
@@ -79,7 +95,7 @@
         android:gravity="center"
         android:orientation="vertical"
         android:visibility="gone"
-        tools:visibility="visible"
+        tools:visibility="gone"
         >
         <LinearLayout
             android:layout_width="380dp"
