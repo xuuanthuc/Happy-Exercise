@@ -13,7 +13,7 @@
         android:theme="@style/Theme.HappyExercise">
         <activity
             android:name=".BMIActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".FinishActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
