@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    android:paddingBottom="20dp"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:text="Are you sure?"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="70dp"
+        android:text="This will stop workout."/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:backgroundTint="@color/teal_700"
+            android:layout_weight="1"
+            android:id="@+id/tvYes"
+            android:textColor="@color/white"
+            android:layout_marginRight="4dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:text="YES"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:id="@+id/tvNo"
+            android:backgroundTint="@color/teal_700"
+            android:layout_marginLeft="4dp"
+            android:textColor="@color/white"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="NO"
+            />
+    </LinearLayout>
+
+</LinearLayout>

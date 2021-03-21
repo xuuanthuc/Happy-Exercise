@@ -1,5 +1,5 @@
 package com.example.happyexercise
-
+import android.app.Dialog
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -7,11 +7,10 @@ import android.os.CountDownTimer
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_exercise.*
+import kotlinx.android.synthetic.main.dialog_custom_back_comfirm.*
 import java.util.*
 
 class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
@@ -33,7 +32,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             actionBar.setDisplayHomeAsUpEnabled(true)//them trang chu hien thi khi ung dung udoc bat
         }
         toolbar_exercise_activity.setNavigationOnClickListener {
-            onBackPressed()
+            customDialogBackButtonConfirm()
         }
         tts = TextToSpeech(this, this)
         exerciseList = Constants.defaultExercise()
@@ -159,5 +158,18 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         rvExercise.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false)
         exerciseAdapter = ExerciseStatusAdapter(exerciseList!!, this)
         rvExercise.adapter = exerciseAdapter
+    }
+    private  fun customDialogBackButtonConfirm(){
+        val customDialog = Dialog(this)
+        customDialog.setContentView(R.layout.dialog_custom_back_comfirm)
+        customDialog.tvYes.setOnClickListener{
+            finish()
+            customDialog.dismiss()
+        }
+        customDialog.tvNo.setOnClickListener{
+
+            customDialog.dismiss()
+        }
+        customDialog.show()
     }
 }
