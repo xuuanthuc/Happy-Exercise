@@ -13,5 +13,9 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, ExerciseActivity::class.java)
             startActivity(intent)
         }
+        llBMI.setOnClickListener {
+            var intent = Intent(this, BMIActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
