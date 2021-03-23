@@ -17,100 +17,217 @@
         app:titleTextColor="@color/white"
         tools:ignore="MissingConstraints" />
 
+    <RadioGroup
+        android:id="@+id/rgGroupRaido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_BMI_activity"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background_radio_group"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbMetricUnit"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_button_check_selector"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="METRIC UNIT"
+            android:textColor="@drawable/toggle_text_color_item_selector"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/rbEuUnit"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_button_check_selector"
+            android:button="@null"
+            android:checked="false"
+            android:gravity="center"
+            android:text="EU UNIT"
+            android:textColor="@drawable/toggle_text_color_item_selector"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </RadioGroup>
+
     <LinearLayout
+        style="@style/Theme.MaterialComponents"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="30dp"
-        android:layout_below="@id/toolbar_BMI_activity"
-        style="@style/Theme.MaterialComponents"
-        android:orientation="vertical">
+        android:layout_below="@id/rgGroupRaido"
+        android:orientation="vertical"
+        android:padding="30dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilMetricUnitWeight"
-            style="@style/Widget.Design.TextInputLayout"
+        <LinearLayout
+            android:id="@+id/llUnitView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"
+            tools:visibility="gone">
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etMetricUnitWeight"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilMetricUnitWeight"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etMetricUnitWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="WEIGHT ( in kg )"
+                    android:inputType="numberDecimal"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilMetricUnitHeight"
+                style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="WEIGHT ( in kg )"
-                android:inputType="numberDecimal"
-                android:textSize="16sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="20dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilMetricUnitHeight"
-            android:layout_marginTop="20dp"
-            style="@style/Widget.Design.TextInputLayout"
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etMetricUnitHeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="HEIGHT ( in cm )"
+                    android:inputType="numberDecimal"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llUsUnitView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etMetricUnitHeight"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilUsUnitWeight"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etUsUnitWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="WEIGHT ( in ibs )"
+                    android:inputType="numberDecimal"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="HEIGHT ( in cm )"
-                android:inputType="numberDecimal"
-                android:textSize="16sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilUsUnitHeightInch"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etUsUnitHeightInch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="INCH"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilUsUnitHeightFeet"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etUsUnitHeightFeet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="FEET"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </LinearLayout>
+
 
         <LinearLayout
             android:id="@+id/llDisplayBMIresult"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:orientation="vertical"
             android:visibility="visible"
             tools:visibility="visible">
+
             <TextView
                 android:id="@+id/tvYourBMI"
-                android:layout_marginTop="10dp"
-
                 android:layout_width="match_parent"
+
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:visibility="invisible"
                 tools:text="Your BMI" />
 
             <TextView
                 android:id="@+id/tvBMIValue"
-                android:layout_marginTop="10dp"
-
                 android:layout_width="match_parent"
+
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 tools:text="BMI value" />
 
             <TextView
                 android:id="@+id/tvBMIType"
-                android:layout_marginTop="10dp"
-
                 android:layout_width="match_parent"
+
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 tools:text="Normal" />
 
             <TextView
                 android:id="@+id/tvBMIDesciption"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 tools:text="Good shape" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnBMIOk"
-                android:layout_marginTop="25dp"
-                android:backgroundTint="@color/teal_200"
-                android:text="OK"
-                android:layout_gravity="bottom"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
         </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBMIOk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="@color/teal_200"
+            android:text="OK"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
     </LinearLayout>
 
 </RelativeLayout>
