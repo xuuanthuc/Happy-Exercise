@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HappyExercise">
         <activity
+            android:name=".HistoryActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
             android:name=".BMIActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
