@@ -6,13 +6,52 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".HistoryActivity">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_history_activity"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:background="@drawable/radius_tool_bar"
+        android:textAlignment="center"
         android:theme="@style/ToolbarTheme"
         app:titleTextColor="@color/white"
-        android:textAlignment="center"
         tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_history_activity"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/tvTitle"
+            android:padding="10dp"
+            android:text="EXERCISE COMPLETED"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvHistoryItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/tvNodata"
+            android:padding="10dp"
+            android:text="NO DATA AVAILABLE"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:visibility="visible" />
+    </LinearLayout>
 </RelativeLayout>
